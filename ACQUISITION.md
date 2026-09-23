@@ -2,37 +2,33 @@
 
 ## Asset offered
 
-The proposed transaction transfers the complete MCP Guardian production repository and the seller's assignable rights in the project, subject to a definitive asset purchase agreement.
+The proposed transaction transfers the complete MCP Guardian private repository and the seller's assignable project IP, subject to a definitive asset-purchase and IP-assignment agreement.
 
-Asking price: **€149,000**.
+Initial asking price: **EUR 19,500**, subject to technical and legal diligence.
+
+## Included
+
+- Complete production source and repository history
+- Static MCP JSON/YAML scanner with JSON and SARIF output
+- Runtime policy gateway with allow, block, and human-approval decisions
+- Tenant-scoped approval and tamper-evident audit components
+- API, CLI, Docker, Compose, CI and deployment assets
+- Automated tests and labeled synthetic evaluation corpora
+- Architecture, threat-model, security and operating documentation
+- Assignable seller-owned project IP
+- Ten business days of asynchronous transition support during the first 30 days after closing
 
 ## Buyer process
 
 1. Buyer identity and strategic fit are confirmed.
-2. A non-confidential acquisition brief and supervised demonstration are provided.
+2. The public-safe showroom and a supervised walkthrough are provided.
 3. The parties execute a mutual NDA.
-4. Buyer receives time-limited, read-only technical due-diligence access.
-5. Buyer reproduces the test suite, coverage report, and performance benchmark.
-6. The parties execute an asset purchase agreement and use an agreed escrow/closing process.
-7. Repository ownership, documentation, and agreed IP rights are transferred after cleared funds.
-8. The seller provides the agreed transition and knowledge-transfer period.
+4. The buyer receives controlled, time-limited technical diligence access.
+5. The buyer reproduces tests, coverage, audits and evaluation results.
+6. The parties execute the definitive acquisition and IP-assignment agreement.
+7. Escrow or another mutually agreed closing process is completed.
+8. Repository ownership and agreed IP are transferred after cleared funds.
 
-## Not included before closing
+## Disclosure boundary
 
-- Unrestricted clone or download access to the production repository
-- Rights to copy, deploy, modify, or redistribute the private source
-- Ownership of third-party dependencies or third-party trademarks
-- Any representation of existing revenue, customers, patents, or regulatory certification
-
-## Due-diligence evidence
-
-- Versioned repository history and release tags
-- Automated tests and coverage configuration
-- Reproducible benchmark harness
-- Threat model and enterprise security controls
-- Source asset manifest
-- Docker deployment configuration
-- REST/OpenAPI surface
-
-Contact the owner privately through the [GitHub profile](https://github.com/inkh95).
-
+Before NDA, no production source, unrestricted clone, proprietary detection logic, deployable secrets, or buyer-only documentation is provided. Third-party dependencies retain their original licenses and are not represented as seller-owned IP.
