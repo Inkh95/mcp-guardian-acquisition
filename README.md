@@ -1,100 +1,66 @@
-# MCP Guardian
+# MCP Guardian — Acquisition Showroom
 
-### Runtime security, approval, and audit infrastructure for AI agents and MCP tools
+**MCP security scanning before deployment. Deterministic governance at tool-call time.**
 
 [![Status](https://img.shields.io/badge/status-acquisition%20available-55e6a5)](#acquisition)
-[![Release](https://img.shields.io/badge/private%20release-v0.5.0-7c8cff)](#verified-build)
-[![Tests](https://img.shields.io/badge/tests-31%2F31%20passing-55e6a5)](#verified-build)
-[![Coverage](https://img.shields.io/badge/coverage-92.66%25-55e6a5)](#verified-build)
+[![Release](https://img.shields.io/badge/private%20release-v1.1.0-7c8cff)](#verified-snapshot)
+[![Tests](https://img.shields.io/badge/tests-53%20passing-55e6a5)](#verified-snapshot)
+[![Coverage](https://img.shields.io/badge/coverage-93.75%25-55e6a5)](#verified-snapshot)
 
-MCP Guardian is a completed, privately held source-code and intellectual-property asset. It sits between AI agents and their MCP tools to evaluate every action before execution, block unsafe requests, require human approval for high-risk operations, and create a tamper-evident audit trail.
+MCP Guardian is a private-source software component offered for acquisition. It detects risky MCP configuration in CI, emits SARIF, and enforces allow/block/human-approval decisions when AI agents call tools.
 
-> **The production repository is private.** This repository is a non-code acquisition showroom. Source access is available only through controlled technical due diligence under NDA.
+![Verified CLI demonstration](assets/demo-scan.svg)
 
-## The problem
+## The gap
 
-AI agents can call tools that read private data, modify repositories, send messages, move money, or delete production resources. Native tool access does not by itself provide consistent policy enforcement, approval gates, tenant isolation, or defensible audit evidence.
+Agent observability explains what happened. Prompt guardrails inspect model traffic. Traditional SAST inspects source. MCP Guardian controls the boundary where agent configuration becomes executable tool access.
 
-MCP Guardian provides that control layer.
+## Integration surface
+
+- CLI: scan JSON/YAML and return CI exit codes
+- SARIF 2.1.0: upload findings to existing code-scanning workflows
+- REST: embed scanner decisions in a product backend
+- Runtime proxy: enforce trusted upstreams and risk policy
+- Approval API: route destructive or high-value actions to a human
+- Audit API: retrieve tenant-scoped records and verify chain integrity
+
+## Architecture
 
 ```mermaid
-flowchart LR
-    A[AI Agent] --> G{MCP Guardian}
-    G -->|Allow| T[MCP Tools]
-    G -->|Block| B[Denied]
-    G -->|High risk| H[Human Approval]
-    H -->|Approved once| T
-    G --> L[Hash-chained Audit]
+flowchart TD
+    C["MCP config"] --> S["Static scanner"]
+    S --> R["JSON / SARIF"]
+    A["AI agent"] --> G["Runtime gateway"]
+    G --> D{"Allow / Block / Approve"}
+    D --> U["Trusted MCP server"]
+    G --> E["Audit evidence"]
 ```
 
-## What the private asset includes
+## Verified snapshot
 
-| Capability | Production implementation |
-|---|---|
-| MCP interception | JSON-RPC enforcement proxy with trusted upstream routing |
-| Deterministic policy engine | Allow, block, or require approval without an external model dependency |
-| Threat controls | Destructive actions, prompt injection, secret exposure, exfiltration, transaction thresholds |
-| Approval workflow | Persistent state with atomic execution claims and duplicate-execution prevention |
-| Enterprise isolation | Tenant-scoped approvals, audit queries, and trusted tenant assignment |
-| Authorization | Separate operator and approver credentials with constant-time comparison |
-| Audit integrity | SHA-256 chained records and tamper verification endpoint |
-| Signed events | HMAC-SHA256 webhook authentication and replay-window validation |
-| Dashboard | Self-contained tenant security and decision console |
-| Deployment | Docker, Compose, REST/OpenAPI, tests, benchmark, and technical documentation |
+| Metric | Verified result |
+|---|---:|
+| Tests | 53 passed |
+| Statement coverage | 93.75% |
+| Calibration / holdout cases | 10 / 30 synthetic fixtures |
+| Calibration / holdout runs | 1,000 / 3,000 |
+| Precision / recall on both corpora | 1.000 / 1.000 |
+| Holdout median / p95 latency | 0.0144 ms / 0.0259 ms |
+| Production + development audits | 0 known vulnerabilities |
+| Container | Build, startup, health and authenticated scan verified in CI |
 
-## Example decisions
+The accuracy result applies only to the included seller-authored synthetic corpora. The separate holdout is not third-party validation and the result is not presented as a universal real-world detection rate.
 
-```json
-{
-  "decision": "require_approval",
-  "risk_score": 85,
-  "reasons": ["Destructive tool call"],
-  "matched_rules": ["destructive-action"]
-}
-```
+## What the buyer receives
 
-```json
-{
-  "decision": "block",
-  "risk_score": 95,
-  "reasons": ["Sensitive credential material detected"],
-  "matched_rules": ["secret-exposure"]
-}
-```
+Complete private source and repository history, tests, evaluation suite, API/CLI, Docker and CI assets, documentation, assignable seller-owned project IP, and ten business days of asynchronous transition support during the first 30 days after closing.
 
-## Verified build
+**Initial asking price: EUR 19,500**, subject to NDA, technical/legal diligence, and a signed asset purchase/IP assignment agreement.
 
-Private release **v0.5.0** has been verified with:
-
-- 31/31 automated tests passing
-- 92.66% measured code coverage
-- 50,000-iteration deterministic policy benchmark
-- 0.0215 ms p95 policy-evaluation latency on the reference environment
-- Reproducible test and benchmark commands included in the private repository
-
-Benchmark results are host-dependent and exclude HTTP transport and persistence overhead. Claims can be reproduced during supervised technical due diligence.
-
-## Security disclosure model
-
-The public materials intentionally exclude proprietary source, exact detection logic, internal schema details, deployable configuration, and buyer-only documentation. Qualified buyers can receive:
-
-1. Supervised product demonstration
-2. Mutual NDA
-3. Read-only private due-diligence access
-4. Reproducible tests and benchmark execution
-5. Source/IP purchase agreement and repository transfer
+No production implementation details are included in this showroom. A read-only private review can follow mutual NDA.
 
 ## Acquisition
 
-**Offering:** complete source code, repository history, assignable project IP, tests, deployment assets, documentation, and a defined technical transition period.
+This is a one-time software source/IP asset purchase, not a subscription, token sale, equity offering, or revenue-multiple claim. See [ACQUISITION.md](ACQUISITION.md), [BENCHMARKS.md](BENCHMARKS.md), [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md), and [INTEGRATION.md](INTEGRATION.md).
 
-**Fixed asking price: €149,000**
-
-This is a one-time asset acquisition. It is not a subscription offering, revenue-multiple claim, token sale, or public-source license.
-
-To request the acquisition brief or NDA process, contact the owner privately through the [GitHub profile](https://github.com/inkh95).
-
-## Notice
-
-Copyright © 2026. All rights reserved. No production source code is distributed in this repository. Product names and third-party marks belong to their respective owners. Any transaction remains subject to identity verification, definitive agreements, and applicable law.
-
+To request the public-safe acquisition brief or NDA process, contact the owner through the [GitHub profile](https://github.com/Inkh95).
