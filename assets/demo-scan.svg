@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="t d">
+  <title id="t">MCP Guardian verified CLI demonstration</title>
+  <desc id="d">Terminal-style image showing an unsafe MCP configuration failing with shell, package, credential and permission findings.</desc>
+  <rect width="1100" height="520" rx="18" fill="#0b1020"/>
+  <rect x="0" y="0" width="1100" height="54" rx="18" fill="#151c31"/>
+  <circle cx="28" cy="27" r="7" fill="#ff5f57"/><circle cx="52" cy="27" r="7" fill="#febc2e"/><circle cx="76" cy="27" r="7" fill="#28c840"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">
+    <text x="28" y="100" fill="#8be9fd">$ mcp-guardian-scan examples/unsafe-mcp.json</text>
+    <text x="28" y="145" fill="#f8f8f2">verdict:</text><text x="190" y="145" fill="#ff5555">fail</text>
+    <text x="28" y="183" fill="#f8f8f2">risk_score:</text><text x="190" y="183" fill="#ffb86c">100</text>
+    <text x="28" y="235" fill="#ff5555">CRITICAL  MCP101  Shell-capable MCP command</text>
+    <text x="28" y="273" fill="#ff5555">CRITICAL  MCP102  Command injection surface</text>
+    <text x="28" y="311" fill="#ff5555">CRITICAL  MCP201  Hard-coded credential [redacted]</text>
+    <text x="28" y="349" fill="#ffb86c">HIGH      MCP301  Overbroad permissions</text>
+    <text x="28" y="410" fill="#50fa7b">53 tests passed · 93.75% coverage · green container CI</text>
+    <text x="28" y="450" fill="#bd93f9">SARIF 2.1.0 · REST API · runtime approval gateway</text>
+  </g>
+</svg>
