@@ -4,7 +4,7 @@
 
 The proposed transaction transfers the complete MCP Guardian private repository and the seller's assignable project IP, subject to a definitive asset-purchase and IP-assignment agreement.
 
-Initial asking price: **EUR 19,500**, subject to technical and legal diligence.
+Initial asking price: **EUR 19,500**, subject to technical and legal diligence. This is separate from the [EUR 1,990 non-exclusive organization source license](https://payhip.com/b/kL8Z3). Any acquisition is subject to licenses granted before closing; the parties must disclose and agree the exact rights in the definitive documents.
 
 ## Included
 
