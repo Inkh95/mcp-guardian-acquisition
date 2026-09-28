@@ -63,4 +63,9 @@ No production implementation details are included in this showroom. A read-only 
 
 Project acquisition is a separate software asset transaction, not a subscription, token sale, equity offering, or revenue-multiple claim. Licenses already granted remain subject to their terms. See [ACQUISITION.md](ACQUISITION.md), [BENCHMARKS.md](BENCHMARKS.md), [TECHNICAL_OVERVIEW.md](TECHNICAL_OVERVIEW.md), and [INTEGRATION.md](INTEGRATION.md).
 
+
+## AEGIS Gateway technical evaluation
+
+AEGIS extends the MCP Guardian approach with model and policy version governance, exact-request human approval and a metadata-only AI Flight Recorder. The current v0.7 build has a localhost synthetic demo and 74 passing automated tests. It is offered for scoped technical evaluation; it is not a production security certification or clinically validated healthcare product. See [AEGIS.md](AEGIS.md) for capabilities, evidence and limitations.
+
 To request the public-safe acquisition brief or NDA process, contact the owner through the [GitHub profile](https://github.com/Inkh95).
